@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serving Heart Charity</title>
+    <link rel="stylesheet" href="uistyle.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <nav class="sidebar">
+            <div class="menu">
+                <a href="#"><img src="logo/menublood.png"></a>
+            </div>
+
+            <ul>
+                <div class="location">
+                    <a href="#"><img src="logo/locationblood.png"></a>
+                </div>
+                <div class="send">
+                    <a href="#"><img src="logo/sendblood.png"></a>
+                </div>
+                <div class="receive">
+                    <a href="#"><img src="logo/receiveblood.png"></a>
+                </div>
+                <div class="history">
+                    <a href="#"><img src="logo/historyblood.png"></a>
+                </div>                
+            </ul>
+
+            <div class="exit">
+                <a href="#" data-label="Logout"><img src="logo/logoutblood.png"></a>
+            </div>
+        </nav>
+
+        <!-- Main content -->
+        <div class="main-content">
+            <header class="top-bar">
+                <div class="logo">
+                    <img src="logo/Serving Hearts Logo.png">
+                </div>
+                <h2>Serving Heart Charity Inc</h2>
+                <div class="user-info">
+                    <span>Welcome, Username</span>
+                    <a href="#"><img src="profile-icon.png" class="profile-icon"></a>
+                </div>
+            </header>
+            <!-- Page content can go here -->
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+    const sidebar = document.querySelector('.sidebar');
+    const menuIcon = document.querySelector('.menu');
+
+    // Add a click event listener to the menu icon
+    menuIcon.addEventListener('click', function() {
+        // Toggle the 'expanded' class on the sidebar
+        sidebar.classList.toggle('expanded');
+    });
+</script>
+
+
+
