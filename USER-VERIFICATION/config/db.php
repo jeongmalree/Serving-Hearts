@@ -1,10 +1,27 @@
 <?php
 
-//Allows encryption of important database passwords
+// Allows encryption of important database passwords
 require 'constants.php';
 
-$conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+// Get the DATABASE_URL from Heroku environment variables
+$databaseUrl = getenv('DATABASE_URL');
 
-if($conn->connect_error) {
-    die('Database error:'. $conn->connect_error);
+// Parse the DATABASE_URL to extract the components
+$parsedUrl = parse_url($databaseUrl);
+
+$host = $parsedUrl['host'];
+$port = $parsedUrl['port'];
+$username = $parsedUrl['user'];
+$password = $parsedUrl['pass'];
+$dbname = ltrim($parsedUrl['path'], '/');
+
+// Create a connection to the MySQL database
+$conn = new mysqli($host, $username, $password, $dbname, $port);
+
+// Check the connection
+if ($conn->connect_error) {
+    die('Database error: ' . $conn->connect_error);
 }
+
+echo "Database connected successfully!";
+?>
