@@ -95,7 +95,7 @@
             var infoWindow = new google.maps.InfoWindow();
 
             // Fetch XML data
-            downloadUrl('http://localhost/Serving%20Hearts/EVENT_MODULE/maps/xml.php', function(data, status) {
+            downloadUrl('https://serving-hearts-app-8d2efcf9d939.herokuapp.com/Serving%20Hearts/EVENT_MODULE/maps/xml.php', function(data, status) {
                 if (status === 200) {
                     var xml = data.responseXML;
                     var markersData = xml.documentElement.getElementsByTagName('marker');
